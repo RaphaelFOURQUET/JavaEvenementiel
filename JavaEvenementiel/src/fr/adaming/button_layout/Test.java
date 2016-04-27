@@ -9,7 +9,7 @@ package fr.adaming.button_layout;
  */
 public class Test {
 	
-	private static int NB_LAYOUT = 4;
+	private static int NB_LAYOUT = 5;
 
 	/**
 	 * @param args
