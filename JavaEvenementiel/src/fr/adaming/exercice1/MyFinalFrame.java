@@ -45,6 +45,7 @@ public class MyFinalFrame extends JFrame {
 		bouton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				animated = true;
+				System.out.println("##################################Listener 1");
 				bouton.setEnabled(false);
 				bouton2.setEnabled(true);
 				go();
@@ -85,6 +86,7 @@ public class MyFinalFrame extends JFrame {
 
 		while(this.animated){
 
+			System.out.println("Dans animated loop !");
 			if(x < 1)
 				backX = false;
 			if(x > pan.getWidth()-50)

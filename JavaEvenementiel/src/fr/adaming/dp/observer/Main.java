@@ -14,8 +14,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// Auto-generated method stub
-		 Fenetre fen = new Fenetre();
-		 fen.setVisible(true);
+		new Fenetre();
 
 	}
 

@@ -15,7 +15,7 @@ public class Test {
 	public static void main(String[] args) {
 		// Auto-generated method stub
 //		new MyFrameAnimationButton();
-		new MyFinalFrame();	//RFRF : TODO Le bouton go ne fonctionne pas bien ! (comme prévu dans le tutoriel p260)
+		new MyFinalFrame();	//RFRF : TODO Le bouton go ne fonctionne pas bien ! (comme prévu dans le tutoriel p260) pk?
 
 	}
 
