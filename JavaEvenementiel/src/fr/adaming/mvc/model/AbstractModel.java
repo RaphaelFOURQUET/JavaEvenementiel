@@ -37,7 +37,7 @@ public abstract class AbstractModel implements Observable {
 
 	//Implémentation du pattern observer
 	public void addObserver(Observer obs) {
-		this.listObserver.add(obs);
+		this.listObserver.add(obs); 
 	}
 	
 	public void notifyObserver(String str) {
