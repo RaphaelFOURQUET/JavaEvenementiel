@@ -26,9 +26,9 @@ public class MyPanel extends JPanel {
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		
 		//On redéfinit une couleur pour le rond
-		if((posX%100)<=50)	//RFRF : Selon la position vert ou rouge
-			g.setColor(Color.GREEN);
-		else g.setColor(Color.RED);
+		if((posX%100)<=50)	//RFRF : Change de couleur selon la position
+			g.setColor(Color.BLACK);
+		else g.setColor(Color.WHITE);
 		//On le dessine aux coordonnées souhaitées
 		g.fillOval(posX, posY, 30, 30); 
 	}

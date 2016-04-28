@@ -30,13 +30,14 @@ public class MyFinalFrame extends JFrame {
 	private boolean animated = true;
 	private boolean backX, backY;
 	private int x, y;
+	private Thread t;	//RFRF : +thread
 
-	public MyFinalFrame(){
+	public MyFinalFrame() {
 		this.setTitle("Animation");
 		this.setSize(300, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		container.setBackground(Color.white);
+		container.setBackground(Color.WHITE);
 		container.setLayout(new BorderLayout());
 		container.add(pan, BorderLayout.CENTER);
 
@@ -45,16 +46,16 @@ public class MyFinalFrame extends JFrame {
 		bouton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				animated = true;
-				System.out.println("##################################Listener 1");
+				t = new Thread(new PlayAnimation());	//RFRF : +thread
+				t.start();
 				bouton.setEnabled(false);
 				bouton2.setEnabled(true);
-				go();
 			}
 		});
 
 		bouton.setEnabled(false); 
 
-//		bouton2.addActionListener(new Bouton2Listener());
+		//		bouton2.addActionListener(new Bouton2Listener());
 		//RFRF : par classe anonyme :
 		bouton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -79,14 +80,14 @@ public class MyFinalFrame extends JFrame {
 		go();
 	}
 
-	private void go(){
+	private void go() {
 		//Les coordonnées de départ de notre rond 
 		x = pan.getPosX();
 		y = pan.getPosY();
 
 		while(this.animated){
 
-			System.out.println("Dans animated loop !");
+			//System.out.println("Dans animated loop !");
 			if(x < 1)
 				backX = false;
 			if(x > pan.getWidth()-50)
@@ -109,6 +110,12 @@ public class MyFinalFrame extends JFrame {
 			} 
 		}
 	}
+	
+	class PlayAnimation implements Runnable {	//RFRF : +thread
+		public void run() {
+			go();
+		}
+	}
 
 	//	class BoutonListener implements ActionListener{
 	//		public void actionPerformed(ActionEvent arg0) {
@@ -119,13 +126,13 @@ public class MyFinalFrame extends JFrame {
 	//		}
 	//	}
 
-//	class Bouton2Listener implements ActionListener{
-//		public void actionPerformed(ActionEvent e) {
-//			animated = false;
-//			bouton.setEnabled(true);
-//			bouton2.setEnabled(false);
-//		}
-//	}
-	
+	//	class Bouton2Listener implements ActionListener{
+	//		public void actionPerformed(ActionEvent e) {
+	//			animated = false;
+	//			bouton.setEnabled(true);
+	//			bouton2.setEnabled(false);
+	//		}
+	//	}
+
 }
 

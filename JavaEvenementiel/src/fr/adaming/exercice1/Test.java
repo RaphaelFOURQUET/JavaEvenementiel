@@ -16,6 +16,7 @@ public class Test {
 		// Auto-generated method stub
 //		new MyFrameAnimationButton();
 		new MyFinalFrame();	//RFRF : TODO Le bouton go ne fonctionne pas bien ! (comme prévu dans le tutoriel p260) pk?
+								// Corrigé avec //RFRF : +thread (ajout de multithread).
 
 	}
 
