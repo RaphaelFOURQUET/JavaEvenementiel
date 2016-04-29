@@ -20,6 +20,10 @@ public abstract class AbstractModel implements Observable {
 	private ArrayList<Observer> listObserver = new
 			ArrayList<Observer>();
 	
+	public String getOperande() {
+		return this.operande;
+	}
+	
 	//Efface
 	public abstract void reset();
 	

@@ -15,7 +15,7 @@ public class CalculetteControler extends AbstractControler {
 		super(cal);
 	}
 
-	public void control() {
+	public void control() {	//RFRF : control() identique pour chiffres et operateurs ? donc controle op relance à chaque chiffre ...bof
 		//On notifie le modèle d'une action si le contrôle est bon
 		//--------------------------------------------------------
 
@@ -30,8 +30,11 @@ public class CalculetteControler extends AbstractControler {
 		}
 
 		//Si le nombre est conforme
-		if(this.nbre.matches("^[0-9.]+$"))	//TODO : REGEX à revoir ^[0-9.]+$  ("^[0-9]+.?[0-9]*")
-			this.calc.setNombre(this.nbre);
+		//RFRF : REGEX ("^[0-9]+.?[0-9]*$") pour un chiffre mais ici, teste seulement le dernier nombre entré
+		if(this.nbre.matches("^[0-9.]$")) {
+			if(!(this.nbre.equals(".") && this.calc.getOperande().contains(".")))
+				this.calc.setNombre(this.nbre);	//A tester plus en profondeur.
+		}
 		this.operateur = "";
 		this.nbre = "";
 	}
