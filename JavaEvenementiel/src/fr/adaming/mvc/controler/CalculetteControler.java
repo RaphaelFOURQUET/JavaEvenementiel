@@ -30,7 +30,7 @@ public class CalculetteControler extends AbstractControler {
 		}
 
 		//Si le nombre est conforme
-		if(this.nbre.matches("^[0-9.]+$"))	//TODO : a revoir ("^[0-9]+.?[0-9]*")
+		if(this.nbre.matches("^[0-9.]+$"))	//TODO : REGEX à revoir ^[0-9.]+$  ("^[0-9]+.?[0-9]*")
 			this.calc.setNombre(this.nbre);
 		this.operateur = "";
 		this.nbre = "";
