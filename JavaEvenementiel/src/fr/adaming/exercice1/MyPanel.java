@@ -6,6 +6,7 @@ package fr.adaming.exercice1;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 /**
@@ -24,11 +25,9 @@ public class MyPanel extends JPanel {
 		g.setColor(Color.WHITE);
 		//On le dessine de sorte qu'il occupe toute la surface
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
-		
+
 		//On redéfinit une couleur pour le rond
-		if((posX%100)<=50)	//RFRF : Change de couleur selon la position
-			g.setColor(Color.BLACK);
-		else g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		//On le dessine aux coordonnées souhaitées
 		g.fillOval(posX, posY, 30, 30); 
 	}
