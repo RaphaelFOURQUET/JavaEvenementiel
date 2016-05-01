@@ -6,7 +6,6 @@ package fr.adaming.exercice1;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 /**
